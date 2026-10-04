@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | 2店舗対応・MEO特化LP制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152A45;
+    --navy-light:#24405F;
+    --teal:#3B6E5E;
+    --amber:#D98C3D;
+    --paper:#EEF1EA;
+    --paper-dark:#DCE2D8;
+    --ink:#1C1F22;
+    --line:#B8C2B9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.85;
+    letter-spacing:0.02em;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Shippori Mincho', serif;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(21,42,69,0.92), rgba(21,42,69,0.97)),
+      repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(255,255,255,0.045) 39px),
+      repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(255,255,255,0.045) 39px),
+      var(--navy);
+    color:#F4F1E8;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 0 80px;
+  }
+  .hero-inner{
+    position:relative;
+    width:100%;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    letter-spacing:0.18em;
+    background:rgba(217,140,61,0.15);
+    border:1px solid rgba(217,140,61,0.5);
+    color:var(--amber);
+    padding:8px 16px;
+    border-radius:999px;
+    margin-bottom:34px;
+  }
+  .badge::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--amber);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(32px, 5.6vw, 58px);
+    font-weight:700;
+    line-height:1.5;
+    max-width:14ch;
+    margin-bottom:28px;
+  }
+  .hero h1 span{
+    color:var(--amber);
+  }
+  .hero p.lead{
+    font-size:16px;
+    max-width:46ch;
+    color:#D7DCCF;
+    margin-bottom:56px;
+  }
+  .pin-map{
+    position:relative;
+    height:150px;
+    max-width:460px;
+  }
+  .pin{
+    position:absolute;
+    width:34px;height:34px;
+    background:var(--amber);
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    box-shadow:0 10px 24px rgba(217,140,61,0.35);
+  }
+  .pin::after{
+    content:"";
+    position:absolute;
+    width:12px;height:12px;
+    background:var(--navy);
+    border-radius:50%;
+    top:7px;left:7px;
+  }
+  .pin.p1{left:0;top:40px;}
+  .pin.p2{left:380px;top:0;background:var(--teal);box-shadow:0 10px 24px rgba(59,110,94,0.4);}
+  .pin.p2::after{background:var(--navy);}
+  .pin-line{
+    position:absolute;
+    top:58px;left:24px;
+    width:360px;
+    height:1px;
+    border-top:2px dashed rgba(244,241,232,0.35);
+  }
+  .pin-label{
+    position:absolute;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:#AEB7A3;
+  }
+  .pin-label.l1{left:-4px;top:80px;}
+  .pin-label.l2{left:356px;top:40px;}
+  .scroll-cue{
+    position:absolute;
+    bottom:28px;left:24px;
+    font-size:11px;
+    letter-spacing:0.2em;
+    color:#8C9484;
+  }
+
+  /* ================= SECTION COMMON ================= */
+  section{
+    padding:110px 0;
+    position:relative;
+  }
+  .tag-sm{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:0.2em;
+    color:var(--teal);
+    font-weight:700;
+    margin-bottom:18px;
+  }
+  .sec-title{
+    font-size:clamp(26px,4vw,38px);
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.6;
+    margin-bottom:34px;
+    max-width:18ch;
+  }
+
+  /* ================= UNDERSTANDING ================= */
+  .understand{
+    background:var(--paper);
+  }
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .quote-box{
+    background:var(--navy);
+    color:#EDEAE0;
+    padding:44px 36px;
+    border-radius:4px;
+    position:relative;
+  }
+  .quote-box::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;
+    width:48px;height:4px;
+    background:var(--amber);
+  }
+  .quote-box p{
+    font-size:15px;
+    color:#CDD3C3;
+  }
+  .quote-box p+p{margin-top:16px;}
+  .issue-list{
+    list-style:none;
+  }
+  .issue-list li{
+    display:flex;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .issue-list li:first-child{padding-top:0;}
+  .issue-num{
+    flex:none;
+    font-family:'Shippori Mincho',serif;
+    font-weight:700;
+    color:var(--amber);
+    font-size:18px;
+  }
+
+  /* ================= VALUE CARDS ================= */
+  .value{
+    background:var(--navy);
+    color:#F4F1E8;
+  }
+  .value .sec-title{color:#F4F1E8;}
+  .value .tag-sm{color:var(--amber);}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+    margin-top:10px;
+  }
+  .card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:6px;
+    padding:34px 26px;
+    position:relative;
+  }
+  .card:nth-child(4),.card:nth-child(5){
+    grid-column:span 1;
+  }
+  .card-pin{
+    width:30px;height:30px;
+    background:var(--amber);
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:28px;
+  }
+  .card-pin span{
+    transform:rotate(45deg);
+    font-size:12px;
+    font-weight:700;
+    color:var(--navy);
+    font-family:'Zen Kaku Gothic New',sans-serif;
+  }
+  .card h3{
+    font-size:17px;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#F4F1E8;
+  }
+  .card p{
+    font-size:13.5px;
+    color:#B9C0AD;
+  }
+
+  /* ================= FLOW ================= */
+  .flow{
+    background:var(--paper-dark);
+  }
+  .timeline{
+    margin-top:50px;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:21px;top:6px;bottom:6px;
+    width:2px;
+    background:var(--line);
+  }
+  .tl-item{
+    position:relative;
+    padding-left:64px;
+    margin-bottom:46px;
+  }
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-dot{
+    position:absolute;
+    left:0;top:0;
+    width:44px;height:44px;
+    background:var(--navy);
+    color:var(--amber);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Shippori Mincho',serif;
+    font-weight:700;
+    font-size:15px;
+  }
+  .tl-day{
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--teal);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .tl-item h3{
+    font-size:17px;
+    color:var(--navy);
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .tl-item p{
+    font-size:13.5px;
+    color:#51594D;
+    max-width:60ch;
+  }
+  .flow-note{
+    margin-top:50px;
+    background:#fff;
+    border-left:4px solid var(--amber);
+    padding:22px 26px;
+    font-size:13.5px;
+    color:var(--navy-light);
+    max-width:640px;
+  }
+
+  /* ================= CLOSING ================= */
+  .closing{
+    background:
+      radial-gradient(circle at 20% 20%, rgba(217,140,61,0.12), transparent 50%),
+      var(--navy);
+    color:#F4F1E8;
+    text-align:center;
+  }
+  .closing .sec-title{
+    color:#F4F1E8;
+    margin:0 auto 20px;
+    max-width:20ch;
+  }
+  .closing p.lead{
+    color:#C9D0BC;
+    max-width:46ch;
+    margin:0 auto 42px;
+    font-size:15px;
+  }
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--amber);
+    color:var(--navy);
+    font-weight:700;
+    font-size:15px;
+    padding:18px 40px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 14px 30px rgba(217,140,61,0.3);
+  }
+  .fine{
+    margin-top:28px;
+    font-size:12px;
+    color:#8C9484;
+    letter-spacing:0.05em;
+  }
+  footer{
+    background:var(--navy);
+    color:#8C9484;
+    text-align:center;
+    font-size:12px;
+    padding:28px 0 40px;
+    letter-spacing:0.1em;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:860px){
+    .understand-grid{grid-template-columns:1fr;gap:40px;}
+    .card-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:600px){
+    .hero{padding:100px 0 60px;}
+    .pin-map{max-width:260px;height:120px;}
+    .pin.p2{left:180px;}
+    .pin-line{width:160px;}
+    .pin-label.l2{left:160px;}
+    .card-grid{grid-template-columns:1fr;}
+    section{padding:80px 0;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="badge">KAIROS PROPOSAL — 2店舗対応 MEO特化LP制作</span>
+    <h1>同じ地図の上でも、<br><span>選ばれる印</span>は違う。</h1>
+    <p class="lead">Googleマップに表示されるだけでは足りません。見つけた瞬間に「ここなら大丈夫」と思わせる、2店舗分の信頼を1ページに刻みます。</p>
+
+    <div class="pin-map">
+      <div class="pin p1"></div>
+      <div class="pin-label l1">STORE 01</div>
+      <div class="pin-line"></div>
+      <div class="pin p2"></div>
+      <div class="pin-label l2">STORE 02</div>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL ↓</div>
+</section>
+
+<section class="understand">
+  <div class="wrap understand-grid">
+    <div>
+      <span class="tag-sm">UNDERSTANDING</span>
+      <h2 class="sec-title">見つかっているのに、<br>選ばれていない。<br>それが一番もったいない。</h2>
+      <div class="quote-box">
+        <p>Webの知識がないまま、2店舗分の情報をドメイン設定からすべて任せたい。デザインは凝らなくていい、でもGoogleマップとの整合性だけは絶対に崩したくない。</p>
+        <p>そのお気持ち、よくわかります。MEOは「見た目」より先に「正確さ」で評価される世界です。だからこそ私たちは、派手さより“一致”を設計の軸に置きます。</p>
+      </div>
+    </div>
+    <div>
+      <ul class="issue-list">
+        <li><span class="issue-num">01</span><span>マップには出ているのに、店舗名・住所・電話番号の表記ゆれで評価が伸びにくい。</span></li>
+        <li><span class="issue-num">02</span><span>2店舗分の情報を、どちらも公平に、迷わず比較できる形で載せたい。</span></li>
+        <li><span class="issue-num">03</span><span>ドメインやサーバーの初期設定に時間も知識も割けない。</span></li>
+        <li><span class="issue-num">04</span><span>デザインより先に「スマホで読みやすいか」を優先したい。</span></li>
+        <li><span class="issue-num">05</span><span>50,000円という予算の中で、無駄のない構成に絞り込みたい。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <div class="wrap">
+    <span class="tag-sm">WHAT KAIROS OFFERS</span>
+    <h2 class="sec-title">地図の上に、<br>正確さという信頼を置く。</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-pin"><span>01</span></div>
+        <h3>NAP完全一致監修</h3>
+        <p>店舗名・住所・電話番号を、Googleマップの登録情報と1文字単位で照合。表記ゆれによるMEO評価の目減りを防ぎます。</p>
+      </div>
+      <div class="card">
+        <div class="card-pin"><span>02</span></div>
+        <h3>地域×業種キーワード設計</h3>
+        <p>「駅名＋業種」などの検索キーワードを不自然にならない形で文章に組み込み、ご用意いただいた原稿のリライトにも対応します。</p>
+      </div>
+      <div class="card">
+        <div class="card-pin"><span>03</span></div>
+        <h3>ドメイン・初期設定 丸ごと代行</h3>
+        <p>独自ドメインの取得・接続から、サーバーやツールの初期設定まで一任いただけます。Webの知識は一切不要です。</p>
+      </div>
+      <div class="card">
+        <div class="card-pin"><span>04</span></div>
+        <h3>スマホ最優先の1ページ設計</h3>
+        <p>メインビジュアル・特徴・料金・店舗情報・アクセスの縦長LP構成。装飾は最小限に、迷わせない導線だけを残します。</p>
+      </div>
+      <div class="card">
+        <div class="card-pin"><span>05</span></div>
+        <h3>2店舗比較アクセス導線</h3>
+        <p>2つの店舗情報とGoogleマップをそれぞれ独立したブロックで並列表示し、どちらのユーザーにも迷いなく届けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <span class="tag-sm">FLOW</span>
+    <h2 class="sec-title">予算5万円に見合う、<br>シンプルな最短ルート。</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">01</div>
+        <div class="tl-day">DAY 1-2</div>
+        <h3>ヒアリング・NAP確定</h3>
+        <p>2店舗分の基本情報、写真素材、ロゴをお預かりし、Googleマップ上の表記と完全に揃える「正データ」をまず確定します。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">02</div>
+        <div class="tl-day">DAY 3-5</div>
+        <h3>構成・原稿設計</h3>
+        <p>選ばれる理由／メニュー・料金／店舗情報／アクセスの順で構成を固め、MEOキーワードを自然に含んだ原稿を作成・リライトします。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">03</div>
+        <div class="tl-day">DAY 6-9</div>
+        <h3>デザイン・実装</h3>
+        <p>装飾を抑えたスマホ最優先のデザインをそのままコーディング。2店舗分のGoogleマップ埋め込みもここで組み込みます。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">04</div>
+        <div class="tl-day">DAY 10-11</div>
+        <h3>ドメイン・サーバー設定</h3>
+        <p>独自ドメインの取得・接続、公開環境の設定まですべて代行。ご確認いただく作業のみお願いします。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">05</div>
+        <div class="tl-day">DAY 12</div>
+        <h3>公開・マップ連携確認</h3>
+        <p>Googleマップからの導線、スマホ表示、NAP整合性を最終チェックしたうえで公開します。</p>
+      </div>
+    </div>
+    <div class="flow-note">
+      構成・情報量に対してシンプルな設計のため、ヒアリングから公開まで約2週間を目安としています。予算5万円という前提のもと、工数が肥大化しない範囲で丁寧に仕上げます。
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <span class="tag-sm" style="color:var(--amber);">NEXT ACTION</span>
+    <h2 class="sec-title">まずは、2店舗分の情報を<br>見せてください。</h2>
+    <p class="lead">住所や営業時間、ロゴや写真があれば十分です。NAPの一致確認から、ドメイン設定、公開まで、Kairosが最後まで伴走します。</p>
+    <a href="#" class="cta-btn">この条件でKairosに相談する →</a>
+    <p class="fine">過去実績（スマホ閲覧可）および、MEO施策の経験についてもご提示可能です。</p>
+  </div>
+</section>
+
+<footer>
+  KAIROS — Web制作・システム開発チーム ｜ 本ページは本案件専用のご提案資料です
+</footer>
+
+</body>
+</html>
